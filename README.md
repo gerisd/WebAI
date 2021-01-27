@@ -1,11 +1,8 @@
-# WebAI
+# WebAI - In Progres...
 WebAI is a web application integrated with machine learning to make predictions, detections, and more.
 
 ## Overview
-* Create an image dataset that a model can be trained on
-* Convert the images from the training dataset to 128-D vector
-* Train multiple models and select the model with the best score and predictability
-* Test classifier by using a piCamera module or a test dataset
+* Gender Recognition section uses machine learning to predict gender from input image
 ___
 
 ## Project Components
