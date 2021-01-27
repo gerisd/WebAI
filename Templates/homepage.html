@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- CSS Bootstrap -->
+<!-- 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+
+	<!-- CSS File -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css') }}">
+
+	<!--Favicon-->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+	<title>WebAI</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="navbar">
+			<ul>
+				<!-- logo -->
+				<li class="logo"><a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/WebAI.png') }}"></a></li> 
+				<li><a id="active" href="{{ url_for('home') }}">Home</a></li>
+				<li><a href="{{ url_for('gender_recognition') }}">Gender Recognition</a></li>
+				<li>Contact</li>
+				<li><a href="#" id="signup-btn"><span>Sign Up</span></a></li>
+			</ul>
+		</div>
+
+		<div class="banner">
+			<div class="app-text">
+				<h1>Welcome to WebAI</h1>
+				<p>WebAI is designed to integrate artifical intelligence with web applications. WebAI continues to use state of the art advanced technology to make predictions, detections, and more. The software involves technology that delivers the best, most reliable results that can be achieved.</p>
+			</div>
+
+<!-- 			<div class="app-picture">
+				<img src="{{ url_for('static', filename='images/robot_outline.png') }}">
+				
+			</div> -->
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>
