@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- CSS File -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gender_recognition.css') }}">
+
+	<!--Favicon-->
+	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+	<title>Gender Recognition</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="navbar">
+			<ul>
+				<!-- logo -->
+				<li class="logo"><a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/WebAI.png') }}"></a></li> 
+				<li><a href="{{ url_for('home') }}">Home</a></li>
+				<li><a id="active" href="{{ url_for('gender_recognition') }}">Gender Recognition</a></li>
+				<li>Contact</li>
+				<li><a href="#" id="signup-btn"><span>Sign Up</span></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="banner">
+		<div class="app-text">
+
+			<h1>Gender Classification</h1>
+			<p>This app is driven by data and machine learning models. As soon as the user uploads the image, in the background it converts the image to grayscale, crops the face, converts it into an eigen image, and finally models it to get a prediction. All this functionality is dumped into the flask app.</p>
+
+		</div>
+
+		<img src="{{ url_for('static', filename='images/classification_process.png') }}">
+
+	</div>
+
+	<div class="form_container">
+		<form action="#" method="POST" enctype="multipart/form-data">
+			<h3>Upload Image</h3>
+			<br>
+			<input class="file-input" type="file" id="upload" name="image" required="true">
+			<input class="submit-input" type="submit" value="Upload">
+		</form>
+	</div>
+
+
+	<!-- If file was uploaded, then it will be displayed with its corresponding detected ML image -->
+
+	{% if fileupload %}
+
+		<div class="img_container">
+			<!-- Placeholder for the original uploaded image -->
+			<div class="uploaded-img">
+				<img src="{{ url_for('static', filename='upload/') }} {{ img_name }}" alt="WebAI">
+			</div>
+
+			<!-- Placeholder for the new detected ML image -->
+			<div class="uploaded-img">
+				<img src="{{ url_for('static', filename='upload/') }} {{ img_name }}" alt="WebAI">
+			</div>
+		</div>
+
+	{% endif %}
+
+</body>
+</html>
